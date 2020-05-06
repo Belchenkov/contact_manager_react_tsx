@@ -1,5 +1,13 @@
+body {
+  font-family: 'Raleway', sans-serif!important;
+}
+
 .App {
   text-align: center;
+}
+
+.container {
+  padding-top: 40px;
 }
 
 .App-logo {

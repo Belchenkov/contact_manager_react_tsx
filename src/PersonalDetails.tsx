@@ -190,7 +190,7 @@ export default class PersonalDetails extends React.Component<IProps, IPersonStat
 
                     <Col>
                         <Col>
-                            <Row>
+                            <Row className="mt-3">
                                 <Col lg="6">
                                     <Button size="lg" color="success">Load</Button>
                                 </Col>
