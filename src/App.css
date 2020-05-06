@@ -1,10 +1,39 @@
+body {
+  font-family: 'Raleway', sans-serif!important;
+  background: #f4f4f4!important;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  padding-top: 40px;
+}
+
+.row {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.btn {
+  font-size: 13px!important;
+  line-height: 17px!important;
+  font-weight: 800!important;
+  text-transform: uppercase!important;
+  text-shadow: 0 0 2px rgba(0, 0, 0, .3);
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3) !important;
+}
+
+label {
+  margin-bottom: 0!important;
+  font-weight: bold;
+}
+
+.main-title {
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
