@@ -55,7 +55,10 @@ export default class PersonalDetails extends React.Component<IProps, IPersonStat
             <Row>
                 <Col lg="8">
                     <Row>
-                        <Col><h4 className="mb-3">Personal details</h4></Col>
+                        <Col className="d-flex align-items-center">
+                            <img src="https://img.icons8.com/plasticine/80/000000/business-contact--v1.png"/>
+                            <h4 className="main-title">Personal details</h4>
+                        </Col>
                     </Row>
                     <Row>
                         <Col><label htmlFor="firstName">First name</label></Col>
