@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4b06160-2468-4bb5-ba7c-2a371428d97e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Validators/IValidator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Validators/MinLengthValidator.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Validators/RegularExpressionValidator.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Validation/AddressValidation.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +87,8 @@
       <workItem from="1588750366765" duration="13000" />
       <workItem from="1588782658965" duration="2815000" />
       <workItem from="1588836441788" duration="17000" />
-      <workItem from="1588870678914" duration="749000" />
+      <workItem from="1588870678914" duration="1479000" />
+      <workItem from="1588959409274" duration="203000" />
     </task>
     <servers />
   </component>
@@ -118,5 +116,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="210" y="242" width="583" height="562" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588784339986" />
+    <state x="159" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1588959556411">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="159" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588959556411" />
   </component>
 </project>
