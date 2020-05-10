@@ -4,6 +4,7 @@ import Col from 'reactstrap/lib/Col';
 import Row from 'reactstrap/lib/Row';
 
 import { IPersonState } from "./State";
+import FormValidation from "./FormValidation";
 
 interface IProps {
     DefaultState: IPersonState
@@ -11,11 +12,16 @@ interface IProps {
 
 export default class PersonalDetails extends React.Component<IProps, IPersonState> {
     private defaultState: Readonly<IPersonState>;
+    private canSave : boolean = false;
 
     constructor(props: IProps) {
         super(props);
         this.defaultState = props.DefaultState;
         this.state = props.DefaultState;
+    }
+
+    private userCanSave = (hasErrors : boolean) => {
+        this.canSave = hasErrors;
     }
 
     private updateBinding = (event: any) => {
@@ -190,7 +196,12 @@ export default class PersonalDetails extends React.Component<IProps, IPersonStat
                             />
                         </Col>
                     </Row>
-
+                    <Row>
+                        <FormValidation
+                            CurrentState={this.state}
+                            CanSave={this.userCanSave}
+                        />
+                    </Row>
                     <Col>
                         <Col>
                             <Row className="mt-3">

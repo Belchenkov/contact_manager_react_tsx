@@ -20,8 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4b06160-2468-4bb5-ba7c-2a371428d97e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Validation/AddressValidation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FormValidation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PersonalDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/PersonalDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +90,9 @@
       <workItem from="1588782658965" duration="2815000" />
       <workItem from="1588836441788" duration="17000" />
       <workItem from="1588870678914" duration="1479000" />
-      <workItem from="1588959409274" duration="719000" />
+      <workItem from="1588959409274" duration="1482000" />
+      <workItem from="1589008103127" duration="477000" />
+      <workItem from="1589123643915" duration="1805000" />
     </task>
     <servers />
   </component>
