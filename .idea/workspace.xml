@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4b06160-2468-4bb5-ba7c-2a371428d97e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Database/TableBuilder.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PersonalDetailsTableBuilder.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Database/Database.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RecordState.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PersonalDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/PersonalDetails.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
         <option value="TypeScript File" />
       </list>
     </option>
@@ -97,7 +99,9 @@
       <workItem from="1588959409274" duration="1482000" />
       <workItem from="1589008103127" duration="477000" />
       <workItem from="1589123643915" duration="2653000" />
-      <workItem from="1589216505278" duration="1477000" />
+      <workItem from="1589216505278" duration="2028000" />
+      <workItem from="1589267363668" duration="519000" />
+      <workItem from="1589301734072" duration="1320000" />
     </task>
     <servers />
   </component>
