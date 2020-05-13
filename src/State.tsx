@@ -13,7 +13,6 @@ export interface IPersonState {
     PersonId : string
 }
 
-/*
 export class PersonState implements IPersonState {
     public FirstName: string;
     public LastName: string;
@@ -26,4 +25,3 @@ export class PersonState implements IPersonState {
     public Postcode: string;
     public DateOfBirth:  StringOrNull;
 }
-*/
