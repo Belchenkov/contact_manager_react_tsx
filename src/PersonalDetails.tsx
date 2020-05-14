@@ -71,6 +71,40 @@ export default class PersonalDetails extends React.Component<IProps, IPersonStat
         this.setState(this.defaultState);
     }
 
+    private savePerson = () => {
+        if (!this.canSave) {
+            alert(`Cannot save this record with missing or incorrect items`);
+            return;
+        }
+        const personState : IRecordState = new RecordState();
+        personState.IsActive = true;
+
+        const state : PersonRecord = {
+            ...this.state,
+            ...personState
+        };
+
+        if (state.PersonId === "") {
+            state.PersonId = Date.now().toString();
+            this.dataLayer.Create(state);
+            this.loadPeople();
+            this.clear();
+        }
+        else {
+            this.dataLayer.Update(state).then(rsn => this.loadPeople());
+        }
+    }
+
+    private setActive = (event : any) => {
+        const person : string = event.target.value;
+        const state = this.people.find((element : IPersonState) => {
+            return element.PersonId === person;
+        });
+        if (state) {
+            this.setState(state);
+        }
+    }
+
     private updateBinding = (event: any) => {
         switch (event.target.id) {
             case `firstName`:
@@ -265,25 +299,42 @@ export default class PersonalDetails extends React.Component<IProps, IPersonStat
                         </Col>
                     </Row>
                     <Row>
+                        <Col>
+                            <Button size="lg" color="primary" onClick={this.savePerson}>Save</Button>
+                        </Col>
+                        <Col>
+                            <Button size="lg" color="secondary" onClick={this.clear}>Clear</Button>
+                        </Col>
+                    </Row>
+                    <Row>
                         <FormValidation
                             CurrentState={this.state}
                             CanSave={this.userCanSave}
                         />
                     </Row>
+                </Col>
+
+                <Col>
                     <Col>
-                        <Col>
-                            <Row>
-                                <Col>{people}</Col>
-                            </Row>
-                            <Row className="mt-3">
-                                <Col lg="6">
-                                    <Button size="lg" color="success">Load</Button>
-                                </Col>
-                                <Col lg="6">
-                                    <Button size="lg" color="info">New Person</Button>
-                                </Col>
-                            </Row>
-                        </Col>
+                        <Row>
+                            <Col>{people}</Col>
+                        </Row>
+                        <Row className="mt-3">
+                            <Col lg="6">
+                                <Button
+                                    size="lg"
+                                    color="success"
+                                    onClick={this.loadPeople}
+                                >Load</Button>
+                            </Col>
+                            <Col lg="6">
+                                <Button
+                                    size="lg"
+                                    color="info"
+                                    onClick={this.clear}
+                                >New Person</Button>
+                            </Col>
+                        </Row>
                     </Col>
                 </Col>
             </Row>
