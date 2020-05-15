@@ -315,11 +315,11 @@ export default class PersonalDetails extends React.Component<IProps, IPersonStat
                 </Col>
 
                 <Col>
-                    <Col>
+                    <Col className="side-right">
                         <Row>
                             <Col>{people}</Col>
                         </Row>
-                        <Row className="mt-3">
+                        <Row className="mt-3 buttons">
                             <Col lg="6">
                                 <Button
                                     size="lg"
