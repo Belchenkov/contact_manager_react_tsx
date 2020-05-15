@@ -65,3 +65,12 @@ label {
     transform: rotate(360deg);
   }
 }
+
+.side-right {
+  padding: 80px;
+}
+
+.side-right button {
+  text-shadow: none!important;
+}
+

@@ -4,6 +4,11 @@ import Col from 'reactstrap/lib/Col';
 import Row from 'reactstrap/lib/Row';
 
 import { IPersonState } from "./State";
+import { PersonRecord } from './Types';
+import FormValidation from "./FormValidation";
+import { Database } from "./Database/Database";
+import { PersonalDetailsTableBuilder } from "./PersonalDetailsTableBuilder";
+import { IRecordState, RecordState } from "./RecordState";
 
 interface IProps {
     DefaultState: IPersonState
@@ -11,11 +16,93 @@ interface IProps {
 
 export default class PersonalDetails extends React.Component<IProps, IPersonState> {
     private defaultState: Readonly<IPersonState>;
+    private canSave : boolean = false;
+    private readonly dataLayer: Database<PersonRecord>;
+    private people: IPersonState[];
 
     constructor(props: IProps) {
         super(props);
         this.defaultState = props.DefaultState;
         this.state = props.DefaultState;
+        const tableBuilder : PersonalDetailsTableBuilder = new PersonalDetailsTableBuilder();
+        this.dataLayer = new Database(tableBuilder.Build());
+    }
+
+    private userCanSave = (hasErrors : boolean) => {
+        this.canSave = hasErrors;
+    }
+
+    private delete = (event : any) => {
+        const person : string = event.target.value;
+        this.DeletePerson(person);
+    }
+
+    private async DeletePerson(person : string) {
+        const foundPerson = this.people.find((element : IPersonState) => {
+            return element.PersonId === person;
+        });
+
+        if (!foundPerson) {
+            return;
+        }
+
+        const personState : IRecordState = new RecordState();
+        personState.IsActive = false;
+
+        const state : PersonRecord = {
+            ...foundPerson,
+            ...personState
+        };
+
+        await this.dataLayer.Update(state);
+        this.loadPeople();
+        this.clear();
+    }
+
+    private loadPeople = () => {
+        this.people = new Array<PersonRecord>();
+        this.dataLayer.Read().then(people => {
+            this.people = people;
+            this.setState(this.state);
+        });
+    }
+
+    private clear = () => {
+        this.setState(this.defaultState);
+    }
+
+    private savePerson = () => {
+        if (!this.canSave) {
+            alert(`Cannot save this record with missing or incorrect items`);
+            return;
+        }
+        const personState : IRecordState = new RecordState();
+        personState.IsActive = true;
+
+        const state : PersonRecord = {
+            ...this.state,
+            ...personState
+        };
+
+        if (state.PersonId === "") {
+            state.PersonId = Date.now().toString();
+            this.dataLayer.Create(state);
+            this.loadPeople();
+            this.clear();
+        }
+        else {
+            this.dataLayer.Update(state).then(rsn => this.loadPeople());
+        }
+    }
+
+    private setActive = (event : any) => {
+        const person : string = event.target.value;
+        const state = this.people.find((element : IPersonState) => {
+            return element.PersonId === person;
+        });
+        if (state) {
+            this.setState(state);
+        }
     }
 
     private updateBinding = (event: any) => {
@@ -51,6 +138,27 @@ export default class PersonalDetails extends React.Component<IProps, IPersonStat
     }
 
     public render() {
+        let people = null;
+
+        if (this.people) {
+            const copyThis = this;
+            people = this.people.map(function it(p) {
+                return (
+                    <Row key={p.PersonId}>
+                        <Col lg="6">
+                            <label>{p.FirstName} {p.LastName}</label>
+                        </Col>
+                        <Col lg="3">
+                            <Button value={p.PersonId} color="link" onClick={copyThis.setActive}>Edit</Button>
+                        </Col>
+                        <Col lg="3">
+                            <Button value={p.PersonId} color="link" onClick={copyThis.delete}>Delete</Button>
+                        </Col>
+                    </Row>
+                )
+            }, this);
+        }
+
         return (
             <Row>
                 <Col lg="8">
@@ -190,18 +298,43 @@ export default class PersonalDetails extends React.Component<IProps, IPersonStat
                             />
                         </Col>
                     </Row>
-
-                    <Col>
+                    <Row>
                         <Col>
-                            <Row className="mt-3">
-                                <Col lg="6">
-                                    <Button size="lg" color="success">Load</Button>
-                                </Col>
-                                <Col lg="6">
-                                    <Button size="lg" color="info">New Person</Button>
-                                </Col>
-                            </Row>
+                            <Button size="lg" color="primary" onClick={this.savePerson}>Save</Button>
                         </Col>
+                        <Col>
+                            <Button size="lg" color="secondary" onClick={this.clear}>Clear</Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <FormValidation
+                            CurrentState={this.state}
+                            CanSave={this.userCanSave}
+                        />
+                    </Row>
+                </Col>
+
+                <Col>
+                    <Col className="side-right">
+                        <Row>
+                            <Col>{people}</Col>
+                        </Row>
+                        <Row className="mt-3 buttons">
+                            <Col lg="6">
+                                <Button
+                                    size="lg"
+                                    color="success"
+                                    onClick={this.loadPeople}
+                                >Load</Button>
+                            </Col>
+                            <Col lg="6">
+                                <Button
+                                    size="lg"
+                                    color="info"
+                                    onClick={this.clear}
+                                >New Person</Button>
+                            </Col>
+                        </Row>
                     </Col>
                 </Col>
             </Row>

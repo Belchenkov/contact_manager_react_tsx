@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a4b06160-2468-4bb5-ba7c-2a371428d97e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PersonalDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/PersonalDetails.tsx" afterDir="false" />
     </list>
@@ -33,13 +34,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="validate" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -58,7 +61,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -67,6 +70,11 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\laragon\www\typescript\contact_manager_react_tsx\node_modules\typescript\lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\typescript\contact_manager_react_tsx\src" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -85,7 +93,18 @@
       <workItem from="1588661876952" duration="8000" />
       <workItem from="1588700058350" duration="1561000" />
       <workItem from="1588750366765" duration="13000" />
-      <workItem from="1588782658965" duration="2042000" />
+      <workItem from="1588782658965" duration="2815000" />
+      <workItem from="1588836441788" duration="17000" />
+      <workItem from="1588870678914" duration="1479000" />
+      <workItem from="1588959409274" duration="1482000" />
+      <workItem from="1589008103127" duration="477000" />
+      <workItem from="1589123643915" duration="2653000" />
+      <workItem from="1589216505278" duration="2028000" />
+      <workItem from="1589267363668" duration="519000" />
+      <workItem from="1589301734072" duration="2181000" />
+      <workItem from="1589387877712" duration="1974000" />
+      <workItem from="1589471911298" duration="2203000" />
+      <workItem from="1589543187445" duration="1896000" />
     </task>
     <servers />
   </component>
@@ -109,9 +128,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="361" y="418" key="#ESLint/0.0.1920.1040@0.0.1920.1040" timestamp="1588520852995" />
-    <state x="210" y="242" width="583" height="562" key="find.popup" timestamp="1588784339986">
+    <state x="299" y="232" key="#com.intellij.ide.util.MemberChooser" timestamp="1589217642123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="210" y="242" width="583" height="562" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588784339986" />
+    <state x="299" y="232" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589217642123" />
+    <state x="210" y="242" width="583" height="630" key="find.popup" timestamp="1589543606795">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="210" y="242" width="583" height="630" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589543606795" />
+    <state x="159" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1588959556411">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="159" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588959556411" />
   </component>
 </project>
